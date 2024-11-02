@@ -1,0 +1,138 @@
+
+$white: #f0f0f0;
+$gray: #c5c5c5;
+$black: #272727;
+$blue: #88bef7;
+$pink: #a91079;
+
+$durkBlue: #263649;
+$durkPink: #2e0249;
+
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #263649;
+
+    &__form{
+        padding: 60px 30px;
+        margin: 0 auto;
+        width: 370px;
+        height: 380px;
+        display: block;
+        background-color: $white;
+        border: 2px solid $black;
+        border-radius: 40px;
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-title{
+            padding-bottom: 35px;
+            font-size: 24px;
+            line-height: 40px;
+            font-weight: 700;
+
+            text-align: center;
+            color: #263649;
+        }
+
+        input{
+            background-color: transparent;
+
+            border-bottom: 3px solid $black;
+            padding: 10px 7px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            transition: .2s all;
+            width: 100%;
+        }
+
+        button{
+            background-color: $black;
+            box-shadow: 0 5px 0px 0px $blue;
+            color: $blue;
+            text-transform: uppercase;
+
+            font-size: 16px;
+            letter-spacing: 2px;
+            padding: 10px;
+            width: 120px;
+            border-radius: 10px;
+            margin: 0 auto;
+            position: relative;
+            transition: .1s all;
+
+            &:hover{
+                transform: scale(1.02);
+            }
+
+            &:active{
+                transform: translateY(2px);
+            }
+        }
+    }
+}
+
+
+.blueBG{
+    .login__form input:focus{
+        border-bottom: 3px solid $blue;
+    }
+    .login__form button{
+        box-shadow: 0 5px 0px 0px $blue;
+        color: $blue;
+    }
+}
+.pinkBG{
+    .login__form input:focus{
+        border-bottom: 3px solid $pink;
+    }
+    .login__form button{
+        box-shadow: 0 5px 0px 0px $pink;
+        color: $pink;
+    }
+}
+.whiteBG{
+    .login__form input:focus{
+        border-bottom: 3px solid $gray;
+    }
+    .login__form button{
+        box-shadow: 0 5px 0px 0px $gray;
+        color: $white;
+    }
+}
+
+
+.loaderForm{
+    border: 8px solid transparent;
+    border-top: 8px solid $black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.errorMessageForm{
+    color: red;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    align-items: center;
+    line-height: 250px;
+}
